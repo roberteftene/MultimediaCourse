@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Client Web Form</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+
+</head>
+
+<body>
+
+    <form action="">
+
+        <h1 class="primary--heading">Create Client Account Form</h1>
+        <br>
+        <label for="fName">Full Name</label><br>
+        <input type="text" id="fName" name="fName" required minlength="2">
+        
+        <br>
+        <label for="lName">Last Name</label><br>
+        <input type="text" id="lName" name="lName" required minlength="" >
+
+        <br>
+        <label for="phone">Phone</label><br>
+        <input type="text" id="phone" name="phone" required minlength="10" maxlength="10" placeholder="075-111-1111">
+
+        <br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required minlength="2" pattern="mail@mail.com">
+
+        <br>
+        <label for="sex">Chose one option</label><br><br>
+      
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+      
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other">
+
+        <br>
+        <label for="pass">Password</label><br>
+        <input type="password" id="pass" name="pass" required  minlength="2" maxlength="10">
+        <br>
+        <button type="submit" class="submitBtn">Submit</button>
+        
+    </form>
+
+
+</body>
+
+</html>
