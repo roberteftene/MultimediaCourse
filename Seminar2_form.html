@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Client Web Form and Flexbox Layout</title>
+    
+    <style>
+        form {
+            border:dashed;
+            border-color:brown;
+            border-width:thick;
+            padding:20px;
+            float:initial;
+            color:orangered;
+        }
+        input:invalid {
+            background-color:darkred;
+        }
+        input:valid {
+            background-color:greenyellow;
+        }
+        input:required:invalid {
+            background-image:linear-gradient(to right, lightblue, coral);
+        }
+        .fx {
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:flex-start;
+            align-items:center;
+            border: 1px solid black;
+        }
+        .square{
+            justify-content:center;
+            align-items:center;
+            width:115px;
+            height:115px;
+            background-color:lightgrey;
+            margin:10px;
+            color:darkslategrey;
+            font-size:36px;
+            text-align:center;
+        }
+        #square-1{
+            background-color: yellowgreen;
+            order:2;
+        }
+        #square-2{
+            background-color: cornflowerblue;
+            order:1;
+        }
+        #square-3{
+            background-color: blueviolet;
+            order:4;
+        }
+    </style>
+
+</head>
+<body>
+    <form autocomplete="on" action="">
+        <h1>Create Client Account Form</h1>
+        <br />
+        <label for="FullName">Full Name: </label>
+        <input type="text" id="FullName" size=35 maxlength=35 value=""
+               pattern="\w{5,35}" title="Should be at least 5 characters long." />
+
+        <br />
+        <label for="email">Email Address: </label>
+        <input type="email" id="email" required title="Wrong email address." />
+
+        <br />
+        <label for="tel">Phone number: </label>
+        <input type="tel" id="tel" required placeholder="075-111-1111"
+               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Read provided example." />
+
+        <br />
+        <label for="url">Enter the URL of your website:</label>
+        <input type="url" id="url" />
+
+        <br />
+        <label for="pass">Password: </label>
+        <input type="password" id="pass" required pattern=".{8,}" title="8 characters or more." />
+
+        <br />
+        <fieldset>
+            <legend>I want to receive</legend>
+            <div>
+                <input type="checkbox" name="newsletter" id="check_1" />
+                <label for="check_1">The weekly newsletter</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="offers" id="check_2" />
+                <label for="check_2">Offers from the company</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="notifications" id="check_3" />
+                <label for="check_3">Notifications</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="nothing" id="check_4" />
+                <label for="check_4">I don't want to receive any information.</label>
+            </div>
+        </fieldset>
+
+        <br />
+        <label for="date">Choose delivery date: </label>
+        <input type="date" id="date" value="2020-10-08" min="2020-10-09"
+               max="2020-11-31" step="2" />
+
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <br />
+    <div class="fx">
+        <div class="square" id="square-1">square 1</div>
+        <div class="square" id="square-2">square 2</div>
+        <div class="square" id="square-3">square 3</div>
+        <div class="square" id="square-4">square 4</div>
+        <div class="square" id="square-5">square 5</div>
+        <div class="square" id="square-6">square 6</div>
+        <div class="square" id="square-7">square 7</div>
+    </div>
+
+    <br />
+
+    <div>
+        <h3>What type of movies do you prefer?</h3>
+        <select name="movie">
+            <option value="1" selected="selected">Comedy</option>
+            <option value="2">Horror</option>
+            <option value="3">Drama</option>
+            <option value="4">Thriller</option>
+            <option value="5">SF</option>
+        </select>
+    </div>
+    <br />
+    <br />
+
+    <label for="color">Select your favorite color</label>
+    <input type="color" id="color" />
+    <input type="submit" value="Submit" />
+
+    <br />
+    <br />
+    <br />
+
+    <form oninput="o.value = a.value*b.value">
+        <input type="number" name="a" id="a" value="10" /> x
+        <input type="number" name="b" id="b" value="20" /> = 
+        <output for="a b" name="o">200</output>
+    </form>
+
+    <p></p>
+    
+    <form>
+        <input name="a" value="50" type="range" oninput="x.value = a.valueAsNumber + b.valueAsNumber;
+                y.value = this.value;"/>
+        <output id="y">50</output> +
+        <input name="b" value="50" type="number" /> =
+        <output name="x" id="x" for="a b"></output> 
+    </form>
+
+</body>
+</html>
