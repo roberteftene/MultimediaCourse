@@ -111,6 +111,12 @@
                max="2020-11-31" step="2" />
 
         <br />
+
+	<input type="color" id="culoare" />
+	<script>
+		var c1 = document.querySelector("#culoare");
+		c1. addEventListener('input',function (evt) { document.body.style.backgroundColor = this.value;})
+	</script>
         <input type="submit" value="Submit" />
     </form>
 
