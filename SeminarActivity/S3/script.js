@@ -72,8 +72,10 @@ function makePieChart(cx, cy, radius, values) {
 
         startingAngle = endAngle;
         context.fill();
+        context.beginPath();
         context.closePath();
         context.save();
+
     }
 
 }
